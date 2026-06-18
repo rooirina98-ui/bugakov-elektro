@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бугаков Электромонтаж — электромонтажные работы в Омске</title>
+  <meta name="description" content="Электромонтажные работы в Омске: проводка, щитки, розетки, освещение, диагностика, подключение техники. Частный мастер Вячеслав, опыт более 10 лет, гарантия на работы." />
+  <meta name="theme-color" content="#050505" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Бугаков Электромонтаж — электромонтаж в Омске" />
+  <meta property="og:description" content="Частный мастер-электрик в Омске. Аккуратно, надёжно, с гарантией на работы." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+
+  <!-- Фоновый эффект схемы проводки (импульсы реагируют на скролл) -->
+  <canvas id="circuit-canvas" aria-hidden="true"></canvas>
+
+  <!-- ШАПКА -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="brand">
+        <span class="brand__mark" aria-hidden="true">⚡</span>
+        <span class="brand__text">
+          <strong>Бугаков</strong>
+          <small>Электромонтаж</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Навигация">
+        <a href="#services" class="nav__link">Услуги</a>
+        <a href="#price" class="nav__link">Прайс</a>
+        <a href="#works" class="nav__link">Работы</a>
+        <a href="#process" class="nav__link">Как работаем</a>
+        <a href="#contacts" class="nav__link">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+79136715706" class="phone-link">+7 913 671 57 06</a>
+        <a href="tel:+79136715706" class="btn btn--primary btn--sm">Позвонить</a>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- МОБИЛЬНОЕ МЕНЮ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#services" class="mobile-menu__link">Услуги</a>
+    <a href="#price" class="mobile-menu__link">Прайс</a>
+    <a href="#works" class="mobile-menu__link">Работы</a>
+    <a href="#process" class="mobile-menu__link">Как работаем</a>
+    <a href="#faq" class="mobile-menu__link">Вопросы</a>
+    <a href="#contacts" class="mobile-menu__link">Контакты</a>
+  </div>
+
+  <main>
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <span class="eyebrow"><span class="eyebrow__dot"></span> Частный мастер-электрик в Омске</span>
+          <h1 class="hero__title">Бугаков Электромонтаж</h1>
+          <p class="hero__subtitle">
+            Электромонтажные работы в Омске: проводка, щитки, розетки, освещение,
+            диагностика и подключение техники.
+          </p>
+          <p class="hero__text">
+            Мастер Вячеслав — опыт более 10 лет, аккуратный подход и гарантия на выполненные
+            работы. Без посредников: вы общаетесь напрямую с мастером.
+          </p>
+
+          <div class="hero__buttons">
+            <a href="tel:+79136715706" class="btn btn--primary">Позвонить</a>
+            <button type="button" class="btn btn--outline copy-phone" data-channel="Telegram">Написать в Telegram</button>
+            <a href="#price" class="btn btn--ghost">Смотреть прайс</a>
+          </div>
+
+          <div class="hero__badges">
+            <span class="badge">Опыт 10+ лет</span>
+            <span class="badge">Гарантия на работы</span>
+            <span class="badge">Без посредников</span>
+            <span class="badge">Омск</span>
+          </div>
+        </div>
+
+        <aside class="master-card reveal">
+          <div class="avatar">
+            <img src="images/master/vyacheslav-avatar.png" alt="Вячеслав, мастер-электрик" loading="eager" />
+            <span class="avatar__spark" aria-hidden="true"></span>
+          </div>
+          <div class="master-card__info">
+            <strong class="master-card__name">Вячеслав</strong>
+            <span class="master-card__role">мастер-электрик</span>
+            <span class="master-card__tag">Трезвый и ответственный подход</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Что делаем</span>
+          <h2 class="section__title">Услуги</h2>
+          <p class="section__lead">
+            Выполняем электромонтажные работы в квартирах, частных домах, гаражах, банях,
+            хозпостройках и небольших коммерческих помещениях. По офисам и магазинам условия
+            обсуждаются индивидуально.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal"><span class="service-card__num">01</span>Замена розеток и выключателей</div>
+          <div class="service-card reveal"><span class="service-card__num">02</span>Установка люстр, светильников, бра</div>
+          <div class="service-card reveal"><span class="service-card__num">03</span>Монтаж и замена электропроводки</div>
+          <div class="service-card reveal"><span class="service-card__num">04</span>Разводка электрики в квартире/доме</div>
+          <div class="service-card reveal"><span class="service-card__num">05</span>Сборка и замена электрощитов</div>
+          <div class="service-card reveal"><span class="service-card__num">06</span>Установка автоматов, УЗО, дифавтоматов</div>
+          <div class="service-card reveal"><span class="service-card__num">07</span>Поиск и устранение неисправностей</div>
+          <div class="service-card reveal"><span class="service-card__num">08</span>Подключение бытовой техники</div>
+          <div class="service-card reveal"><span class="service-card__num">09</span>Подключение варочных панелей, духовых шкафов</div>
+          <div class="service-card reveal"><span class="service-card__num">10</span>Электрика в новостройках</div>
+          <div class="service-card reveal"><span class="service-card__num">11</span>Электрика при ремонте квартиры</div>
+          <div class="service-card reveal"><span class="service-card__num">12</span>Электрика в частном доме</div>
+          <div class="service-card reveal"><span class="service-card__num">13</span>Электрика в гараже, бане, хозпостройках</div>
+          <div class="service-card reveal"><span class="service-card__num">14</span>Штробление под проводку</div>
+          <div class="service-card reveal"><span class="service-card__num">15</span>Монтаж кабель-канала</div>
+          <div class="service-card reveal"><span class="service-card__num">16</span>Перенос розеток и выключателей</div>
+          <div class="service-card reveal"><span class="service-card__num">17</span>Установка тёплого пола и терморегуляторов</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРАЙС -->
+    <section class="section section--alt" id="price">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Прайс</span>
+          <h2 class="section__title">Ориентиры по стоимости</h2>
+          <p class="section__lead">
+            Цены указаны как ориентир. Точная стоимость зависит от объёма, состояния проводки,
+            материала стен, сложности доступа и согласуется после осмотра.
+          </p>
+        </div>
+
+        <div class="price-layout">
+          <div class="price-table reveal">
+            <div class="price-row"><span class="price-row__name">Минимальная сумма работ</span><span class="price-row__val">от 2 000 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Консультация по телефону</span><span class="price-row__val price-row__val--free">бесплатно</span></div>
+            <div class="price-row"><span class="price-row__name">Осмотр без выполнения работ</span><span class="price-row__val">500 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Удалённый выезд / пригород</span><span class="price-row__val">от 1 000 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Замена розетки или выключателя</span><span class="price-row__val">от 500 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Установка новой розетки/выключателя</span><span class="price-row__val">от 700 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Перенос розетки/выключателя</span><span class="price-row__val">от 1 500 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Установка люстры/светильника</span><span class="price-row__val">от 1 000 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Подключение варочной панели/духового шкафа</span><span class="price-row__val">от 1 500 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Поиск неисправности / диагностика</span><span class="price-row__val">от 1 000 ₽</span></div>
+            <div class="price-row"><span class="price-row__name">Монтаж кабель-канала</span><span class="price-row__val">от 250 ₽/м</span></div>
+            <div class="price-row"><span class="price-row__name">Штробление под проводку</span><span class="price-row__val">от 400 ₽/м</span></div>
+            <div class="price-row"><span class="price-row__name">Сборка/замена электрощита</span><span class="price-row__val price-row__val--muted">после осмотра</span></div>
+            <div class="price-row"><span class="price-row__name">Разводка электрики в квартире/доме</span><span class="price-row__val price-row__val--muted">после осмотра</span></div>
+            <div class="price-row"><span class="price-row__name">Электрика в квартире/доме под ремонт</span><span class="price-row__val price-row__val--muted">после осмотра</span></div>
+          </div>
+
+          <aside class="notice-card reveal">
+            <h3 class="notice-card__title">Выезд</h3>
+            <p>Если работы выполняются, выезд входит в стоимость. Если мастер приехал только на
+              осмотр/оценку и работы не выполняются — 500 ₽.</p>
+            <p>Удалённые объекты обсуждаются индивидуально.</p>
+            <a href="tel:+79136715706" class="btn btn--primary btn--block">Уточнить стоимость</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРЕИМУЩЕСТВА -->
+    <section class="section" id="advantages">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Почему обращаются</span>
+          <h2 class="section__title">Почему выбирают Вячеслава</h2>
+        </div>
+
+        <div class="advantages-grid">
+          <div class="advantage reveal">
+            <h3 class="advantage__title">Более 10 лет опыта</h3>
+            <p>Электромонтажные работы в квартирах, домах, гаражах, банях и небольших коммерческих помещениях.</p>
+          </div>
+          <div class="advantage reveal">
+            <h3 class="advantage__title">Без посредников</h3>
+            <p>Вы общаетесь напрямую с мастером. На заявку приезжает тот специалист, с кем вы обсуждали задачу.</p>
+          </div>
+          <div class="advantage reveal">
+            <h3 class="advantage__title">Аккуратно и без навязывания</h3>
+            <p>Мастер объясняет простыми словами, что нужно сделать, не предлагает лишних работ и помогает выбрать нормальное решение.</p>
+          </div>
+          <div class="advantage reveal">
+            <h3 class="advantage__title">Помощь с материалами</h3>
+            <p>Можно купить материалы самостоятельно, согласовать список с мастером или поручить закупку по договорённости.</p>
+          </div>
+          <div class="advantage reveal">
+            <h3 class="advantage__title">Гарантия на работы</h3>
+            <p>На выполненные работы предоставляется гарантия.</p>
+          </div>
+          <div class="advantage reveal">
+            <h3 class="advantage__title">Трезвый и ответственный подход</h3>
+            <p>Без пропаданий, с нормальным общением, соблюдением договорённостей и аккуратностью на объекте.</p>
+          </div>
+        </div>
+
+        <div class="master-note reveal">
+          Работы выполняет мастер Вячеслав. На крупные заказы и задачи со сжатыми сроками может
+          подключаться напарник Игорь. Клиент общается напрямую с мастером — без посредников и
+          случайных исполнителей.
+        </div>
+      </div>
+    </section>
+
+    <!-- ФОТО РАБОТ -->
+    <section class="section section--alt" id="works">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Работы</span>
+          <h2 class="section__title">Фото работ</h2>
+          <p class="section__lead">Примеры выполненных электромонтажных работ.</p>
+        </div>
+        <div class="gallery" id="gallery" aria-live="polite"></div>
+        <p class="empty-hint" id="gallery-empty" hidden>
+          Фотографии скоро появятся. Чтобы добавить — положите снимки в <code>images/works/</code>
+          и впишите их в <code>data/gallery.json</code>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ДО / ПОСЛЕ -->
+    <section class="section" id="before-after">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">До / после</span>
+          <h2 class="section__title">Наглядный результат</h2>
+          <p class="section__lead">Как меняется электрика после работы мастера.</p>
+        </div>
+        <div class="ba-grid" id="ba-grid" aria-live="polite"></div>
+        <p class="empty-hint" id="ba-empty" hidden>
+          Примеры скоро появятся. Чтобы добавить — положите пары снимков в
+          <code>images/before-after/</code> и впишите их в <code>data/before-after.json</code>.
+        </p>
+      </div>
+    </section>
+
+    <!-- КАК ПРОХОДИТ РАБОТА -->
+    <section class="section section--alt" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Процесс</span>
+          <h2 class="section__title">Как проходит работа</h2>
+          <p class="section__lead">
+            Сначала мастер уточняет задачу по телефону и ориентирует по стоимости. После выезда
+            и осмотра даёт более точную оценку, согласует объём работ и только после этого
+            приступает к выполнению.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal"><span class="step__num">1</span><span class="step__text">Звонок или сообщение</span></div>
+          <div class="step reveal"><span class="step__num">2</span><span class="step__text">Клиент описывает задачу</span></div>
+          <div class="step reveal"><span class="step__num">3</span><span class="step__text">Предварительный ориентир по цене и срокам</span></div>
+          <div class="step reveal"><span class="step__num">4</span><span class="step__text">Выезд на объект</span></div>
+          <div class="step reveal"><span class="step__num">5</span><span class="step__text">Более точная оценка после осмотра</span></div>
+          <div class="step reveal"><span class="step__num">6</span><span class="step__text">Выполнение работ</span></div>
+          <div class="step reveal"><span class="step__num">7</span><span class="step__text">Проверка результата</span></div>
+          <div class="step reveal"><span class="step__num">8</span><span class="step__text">Гарантия на выполненные работы</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Вопросы</span>
+          <h2 class="section__title">Частые вопросы</h2>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item reveal">
+            <summary>Берёте мелкие заявки?</summary>
+            <p>Да, берём. Минимальная сумма работ — от 2 000 ₽.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Можно ли вызвать мастера только на осмотр?</summary>
+            <p>Да. Если работы не выполняются, осмотр/оценка — 500 ₽. Если работы выполняются, выезд входит в стоимость.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Работаете по пригородам?</summary>
+            <p>Да, по договорённости. Удалённые объекты — от 1 000 ₽ за выезд, итоговая стоимость обсуждается индивидуально.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Кто покупает материалы?</summary>
+            <p>Можно по-разному: клиент покупает сам, мастер помогает подобрать список или покупает материалы по согласованию.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Есть ли гарантия?</summary>
+            <p>Да, на выполненные работы предоставляется гарантия.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Можно ли срочно?</summary>
+            <p>По возможности. Если мастер свободен, можно договориться на ближайшее время.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Работаете с офисами и магазинами?</summary>
+            <p>Да, с небольшими коммерческими помещениями условия обсуждаются индивидуально.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section section--alt" id="contacts">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Контакты</span>
+          <h2 class="section__title">Связаться с мастером</h2>
+          <p class="section__lead">
+            Опишите задачу по телефону — мастер сориентирует по цене, срокам и подскажет,
+            какие материалы могут понадобиться.
+          </p>
+        </div>
+
+        <div class="contacts">
+          <div class="contacts__info reveal">
+            <p class="contacts__name"><strong>Вячеслав</strong>, мастер-электрик</p>
+            <a href="tel:+79136715706" class="contacts__phone">+7 913 671 57 06</a>
+            <p class="contacts__city">Омск</p>
+            <p class="contacts__geo">Работаем по Омску. Выезд за город и удалённые объекты обсуждаются индивидуально.</p>
+          </div>
+          <div class="contacts__card reveal">
+            <a href="tel:+79136715706" class="btn btn--primary btn--block">Позвонить</a>
+            <button type="button" class="btn btn--outline btn--block copy-phone" data-channel="Telegram">Написать в Telegram</button>
+            <button type="button" class="btn btn--ghost btn--block copy-phone" data-channel="Max">Max</button>
+            <p class="contacts__note">Telegram и Max — найдите мастера по номеру телефона.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Бугаков Электромонтаж · Омск</span>
+      <a href="tel:+79136715706">+7 913 671 57 06</a>
+    </div>
+  </footer>
+
+  <!-- ЛИПКАЯ МОБИЛЬНАЯ ПАНЕЛЬ -->
+  <nav class="mobile-bar" aria-label="Быстрые действия">
+    <a href="tel:+79136715706" class="mobile-bar__btn mobile-bar__btn--call">📞 Позвонить</a>
+    <button type="button" class="mobile-bar__btn copy-phone" data-channel="Telegram">✈️ Telegram</button>
+    <button type="button" class="mobile-bar__btn copy-phone" data-channel="Max">💬 Max</button>
+  </nav>
+
+  <!-- ЛАЙТБОКС -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lightbox-close" aria-label="Закрыть">×</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </div>
+
+  <!-- ТОСТ -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
