@@ -90,6 +90,7 @@ function initActiveNav() {
 async function initGallery() {
   const grid = document.getElementById("gallery");
   const empty = document.getElementById("gallery-empty");
+  const section = document.getElementById("works");
   if (!grid) return;
 
   try {
@@ -97,7 +98,7 @@ async function initGallery() {
     const items = await res.json();
 
     if (!Array.isArray(items) || items.length === 0) {
-      if (empty) empty.hidden = false;
+      if (section) section.hidden = true;
       return;
     }
 
@@ -125,6 +126,7 @@ async function initGallery() {
 async function initBeforeAfter() {
   const grid = document.getElementById("ba-grid");
   const empty = document.getElementById("ba-empty");
+  const section = document.getElementById("before-after");
   if (!grid) return;
 
   try {
@@ -132,7 +134,7 @@ async function initBeforeAfter() {
     const items = await res.json();
 
     if (!Array.isArray(items) || items.length === 0) {
-      if (empty) empty.hidden = false;
+      if (section) section.hidden = true;
       return;
     }
 
